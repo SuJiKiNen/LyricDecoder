@@ -63,6 +63,9 @@
     <ClCompile Include="LyricDecoder.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="des.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="zlib\crc32.h">
@@ -99,6 +102,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="LyricDecoder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="des.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

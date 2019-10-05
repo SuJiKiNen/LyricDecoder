@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LyricDecoder.cpp" />
+    <ClCompile Include="des.c" />
     <ClCompile Include="zlib\adler32.c" />
     <ClCompile Include="zlib\compress.c" />
     <ClCompile Include="zlib\crc32.c" />
@@ -161,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LyricDecoder.h" />
+    <ClInclude Include="des.h" />
     <ClInclude Include="zlib\crc32.h" />
     <ClInclude Include="zlib\deflate.h" />
     <ClInclude Include="zlib\gzguts.h" />
