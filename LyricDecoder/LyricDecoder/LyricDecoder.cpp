@@ -2,7 +2,7 @@
 #include "zlib/zconf.h"
 #include "zlib/zlib.h"
 #include "stdio.h"
-#include "des.h"
+#include "QQMusicDES/des.h"
 #include <sys/stat.h>
 #include <malloc.h>
 #include <stdlib.h>

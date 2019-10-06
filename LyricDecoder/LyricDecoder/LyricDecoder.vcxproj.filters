@@ -63,7 +63,7 @@
     <ClCompile Include="LyricDecoder.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="des.c">
+    <ClCompile Include="QQMusicDES\des.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -104,7 +104,7 @@
     <ClInclude Include="LyricDecoder.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="des.h">
+    <ClInclude Include="QQMusicDES\des.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
