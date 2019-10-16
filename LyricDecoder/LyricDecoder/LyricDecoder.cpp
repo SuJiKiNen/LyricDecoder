@@ -20,10 +20,9 @@ const unsigned char QQKey[] = { 0x21, 0x40, 0x23, 0x29, 0x28, 0x2A, 0x24, 0x25, 
 // A trailing '\0' is added to the decompress result
 // Returns NULL on failure.
 unsigned char* deflate_memory(Bytef* src, unsigned src_len) {
-	const size_t CHUNK = 262144;  // 256k chunk size as suggested by zlib doc
 	int ret = Z_STREAM_ERROR;
 	z_stream strm;
-	size_t dest_len = (src_len / CHUNK + 1) * CHUNK;  // up-rounding src_len to a multiple of CHUNK
+	size_t dest_len = 262144;  // 256k chunk size as suggested by zlib doc
 	Bytef* dest = (Bytef*)malloc(dest_len);
 	if (!dest) return NULL;
 
@@ -55,12 +54,13 @@ unsigned char* deflate_memory(Bytef* src, unsigned src_len) {
 		if (strm.avail_out || ret == Z_STREAM_END)
 			break;
 		else {
-			Bytef* dest_new = (Bytef*)realloc(dest, dest_len + CHUNK);
+			// double the size of output buffer
+			Bytef* dest_new = (Bytef*)realloc(dest, 2 * dest_len);
 			if (dest_new) {
 				dest = dest_new;
 				strm.next_out = dest + dest_len;
-				strm.avail_out = CHUNK;
-				dest_len += CHUNK;
+				strm.avail_out = dest_len;
+				dest_len *= 2;
 			}
 			else {
 				inflateEnd(&strm);
